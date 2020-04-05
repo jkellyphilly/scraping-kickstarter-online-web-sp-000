@@ -19,7 +19,12 @@ def create_project_hash
 
     # Grab the title of the project and use it as the key to this project
     title = project.css("h2.bbcard_name strong a".text)
-    projects[title.to_sym] = {}
+    projects[title.to_sym] = {
+      image_link: project.css("div.project-thumbnail a img").attribute("src").value
+
+    }
+
+
 
   end
 
