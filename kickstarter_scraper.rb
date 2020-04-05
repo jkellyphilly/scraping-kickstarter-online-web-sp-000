@@ -15,7 +15,7 @@ def create_project_hash
   # percent_funded: project.css("ul.project-stats li.first.funded strong").text.gsub("%","").to_i
   #binding.pry
 
-  kickstarter.css("li.project.grid_4") each do |project|
+  kickstarter.css("li.project.grid_4").each do |project|
 
     # Grab the title of the project and use it as the key to this project
     title = project.css("h2.bbcard_name strong a".text)
@@ -28,7 +28,7 @@ def create_project_hash
   end
 
   projects
-  
+
 end
 
 create_project_hash
